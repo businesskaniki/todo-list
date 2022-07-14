@@ -1,0 +1,93 @@
+body {
+  background-color: bisque;
+}
+
+.main {
+  margin-top: 15%;
+  background-color: white;
+  display: flex;
+  box-shadow: 0px 4px 13px 2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 4px 13px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 13px 2px rgba(0, 0, 0, 0.75);
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.nav-div {
+  width: 100%;
+}
+
+.nav-div p {
+  font-size: larger;
+  color: black;
+  text-transform: capitalize;
+}
+
+.para {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 2%;
+}
+
+.form {
+  color: gray;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-style: italic;
+}
+
+.form input {
+  padding: 2%;
+  width: 95%;
+  border: none;
+  font-style: italic;
+  font-size: larger;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list-items {
+  list-style: none;
+}
+
+.list-items li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+.small-txt {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.fa-ellipsis-v {
+  padding-right: 5%;
+}
+
+.fa-refresh {
+  padding-right: 5%;
+}
+
+footer {
+  background-color: whitesmoke;
+  text-align: center;
+  font-size: x-large;
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 10px;
+}
