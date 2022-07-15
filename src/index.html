@@ -21,12 +21,39 @@
           <i class="fa fa-refresh" aria-hidden="true"></i>
         </div>
 
-        <form class="form">
-          <input type="text" id="text-input" placeholder="add your list ..." />
+        <form class="form" id="form">
+          <div class="message">
+            <input class="forminput" type="text" id="text-input" placeholder="add your list ..." />
+            <small id="error"></small>
+          </div>
+          <button id="submit-btn" type="submit" ><i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
         </form>
       </div>
       <div class="todo">
-        <ul class="list-items" id="list"></ul>
+        <ul class="list-items" id="list">
+          <li>
+            <div class="small-txt">
+              <input type = "checkbox">
+              <h5>task</h5>
+            </div>
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </li>
+          <!-- <li>
+            <div class="small-txt">
+              <input type = "checkbox">
+              <h5>task</h5>
+              </div>
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </li>
+          <li>
+            <div class="small-txt">
+              <input type = "checkbox">
+              <h5>task</h5>
+              </div>
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i> -->
+          </li>
+        </ul>
       </div>
       <footer>
         <span> clear all compleated </span>

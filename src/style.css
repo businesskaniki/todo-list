@@ -41,14 +41,36 @@ body {
   width: 100%;
   border-bottom: 1px solid gray;
   font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.form input {
+#error {
+  color: red;
+}
+
+#submit-btn {
+  border: none;
+  font-size: x-large;
+  background-color: transparent;
+  padding-left: 3%;
+  padding-right: 3%;
+  cursor: pointer;
+}
+
+.fa-paper-plane {
+  padding-right: 5%;
+}
+
+.forminput {
   padding: 2%;
   width: 95%;
   border: none;
   font-style: italic;
   font-size: larger;
+  outline: none;
 }
 
 .todo {
@@ -77,10 +99,19 @@ body {
 
 .fa-ellipsis-v {
   padding-right: 5%;
+  cursor: pointer;
+  padding-right: 5%;
 }
 
 .fa-refresh {
   padding-right: 5%;
+}
+
+.fa-trash {
+  cursor: pointer;
+  font-size: larger;
+  padding-top: 15px;
+  padding-right: 30px;
 }
 
 footer {
@@ -90,4 +121,30 @@ footer {
   width: 100%;
   padding-top: 5%;
   padding-bottom: 10px;
+}
+
+.flipedli {
+  background-color: orange;
+}
+
+.input2 {
+  padding: 2%;
+  width: 100%;
+  border: none;
+  font-style: italic;
+  font-size: larger;
+  background-color: rgb(237, 202, 136);
+  outline: none;
+}
+.small-txt-edit {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color:rgb(237, 202, 136);
+  width: 100%;
+  border: 1px solid black;
+}
+
+.icons {
+  background-color: rgb(237, 202, 136);
 }
