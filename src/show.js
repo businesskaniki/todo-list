@@ -39,6 +39,16 @@ export default class display {
     let tasks = '';
 
     taskitems.forEach((task) => {
+      let strike;
+      let checked;
+      if (task.completed === true) {
+        strike = 'strike';
+        checked = 'checked';
+      } else {
+        strike = '';
+        checked = '';
+      }
+      
       tasks += `<li class="todo-item">
       <input type="checkbox" name="check" id="check">
       <input type="text" name="task" id="task" value="${task.description}" reuired>
@@ -58,7 +68,7 @@ export default class display {
     const taskInput = document.querySelectorAll('#task');
     taskInput.forEach((task, index) => {
       task.addEventListener('keyup', (e) => {
-        if (e.keyCode === 5 && task.value !== '') {
+        if (e.keyCode === 13 && task.value !== '') {
           this.editTask(task.value, index, taskitems);
         }
       });
