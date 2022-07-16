@@ -1,69 +1,62 @@
-import _ from 'lodash';
+import display from './show.js';
 import './style.css';
-import acceptdata from './storage.js';
+import Store from './store.js';
+import Task from './create.js';
+import checkchange from './change.js';
 
-const form = document.getElementById('form');
-const input = document.getElementById('text-input');
-const msg = document.getElementById('error');
-const tasks = document.getElementById('list');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    formvalidation();
-})
-
-let formvalidation = () => {
-    if(input.value === ""){
-        msg.innerHTML = `task cannot be blank`
-    }
-    else {
-        msg.innerHTML = ''
-        getdata();
-    }
+let tasksList;
+if (Store.getData() === null) {
+  tasksList = [];
+} else {
+  tasksList = Store.getData();
 }
 
-let data = {};
+const add = (newTask) => {
+  let index;
+  if (Store.getData() === null) {
+    index = 1;
+  } else {
+    tasksList = Store.getData();
+    index = tasksList.length + 1;
+  }
+  const task = new Task(newTask, false, index);
+  tasksList.push(task);
+  Store.savetolist(tasksList);
+  display.taskdisplay(tasksList);
+};
 
-let getdata = () => {
-//    acceptdata();
-//    addtoscreen();
+const formclear = () => {
+  document.querySelector('#add-new-task').value = '';
+};
+
+const newtodo = document.querySelector('#add-new-task');
+newtodo.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13 && newtodo.value !== '') {
+    const newTask = newtodo.value;
+    add(newTask);
+    formclear();
+  }
+});
+
+display.taskdisplay(tasksList);
+
+const btnRefresh = document.querySelector('#btn-refresh');
+btnRefresh.addEventListener('click', () => {
+  window.location.reload();
+  display.reloadPage();
+});
+
+const clearall = document.querySelector('.btn-clear');
+clearall.addEventListener('click', (e) => {
+  checkchange.clearcheckedtask(e, tasksList);
+  tasksList = Store.getData();
+  display.updateIndex(tasksList);
+  Store.savetolist(tasksList);
+  tasksList = Store.getData();
+  display.taskdisplay(tasksList);
+});
+
+const dreload = window.performance.getEntriesByType('navigation')[0].type;
+if (dreload === 'reload') {
+  display.reloadPage();
 }
-
-let addtoscreen = () => {
-    const li = document.createElement('li');
-    li.classList.add('listItem')
-    li.innerHTML += `
-    <div class="small-txt">
-    <input type = "checkbox">
-    <h5>${data.description}</h5>
-    </div>
-    <i   class="fa fa-ellipsis-v" aria-hidden="true"></i>
-  `
-  tasks.appendChild(li);
-  li.addEventListener('click' ,removeTask);
-  resetform();
-}
-
-
-function removeTask(e){
-    const item = e.target;
-    if (item.classList[1] === "fa-ellipsis-v"){
-        item.parentElement.innerHTML = `
-        <div class="small-txt-edit">
-        <input type = "checkbox">
-        <input type = "text"  class="input2" placeholder="${data.description}">
-        <div class="icons"><i class="fa fa-trash" aria-hidden="true"></i><div/>
-        </div>
-         `
-    }
-
-    if(item.classList[1] === "fa-trash"){
-        item.parentElement.parentElement.remove()
-    }
-    const dataid = data['id'];
-}
-
-let resetform = () => {
-    input.value = "";
-}
-
