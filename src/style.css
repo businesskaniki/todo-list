@@ -67,7 +67,13 @@ li {
   align-items: center;
   padding: 0.5rem;
   gap: 0.4rem;
-  border-bottom: 1px solid gray;
+  border: 1px solid gray;
+  border-radius: 3px;
+  gap: 3px;
+}
+
+.todo-item:hover{
+  background-color: orange;
 }
 
 .todo-item input[type='text'] {
@@ -75,6 +81,10 @@ li {
   padding: 0.6rem;
   border: none;
   outline: none;
+}
+
+.todo-item input:hover {
+  background-color: orange;
 }
 
 .clear-fields {
