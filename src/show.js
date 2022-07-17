@@ -57,10 +57,10 @@ export default class display {
     });
 
     todoList.innerHTML = tasks;
-
     const buttondelete = document.querySelectorAll('.btn-delete');
     buttondelete.forEach((btn, index) => {
       btn.addEventListener('click', (e) => {
+
         this.removeTask(e.target, btn, index);
       });
     });
