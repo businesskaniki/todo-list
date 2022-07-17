@@ -82,6 +82,7 @@ li {
   margin: 0 auto;
   padding: 0.5rem;
   text-align: center;
+  background-color: gray;
 }
 
 .btn {
@@ -95,10 +96,6 @@ li {
   border: none;
 }
 
-.btn-clear:hover {
-  background-color: rgb(154, 154, 154);
-}
-
 .btn-delete,
 #btn-refresh {
   cursor: pointer;
@@ -109,5 +106,25 @@ li {
 }
 
 input[type='text']:focus {
-  background-color: rgb(240, 182, 74);
+  background-color: white;
+}
+
+.todo-item2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.4rem;
+  border-bottom: 1px solid gray;
+  background-color: orange;
+}
+
+.todo-item2 input[type='text'] {
+  width: 95%;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+  background-color: orange;
+  outline: none;
 }
