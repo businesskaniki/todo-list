@@ -3,6 +3,10 @@
 
 > this project helps you keep track of your task.  it helps you arrange your tasks in oder of most urgent and then when you compleate your task you check it as done and finally you can delete all the completed tasks.
 
+## see the live version of the project at:
+
+-todo list [Todo list](https://businesskaniki.github.io/todo-list/)
+
 
 ## Built With
 
