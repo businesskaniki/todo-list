@@ -5,7 +5,7 @@
 
 ## see the live version of the project at:
 
--todo list [Todo list](https://businesskaniki.github.io/todo-list/)
+-todo list [Todo list](https://businesskaniki.github.io/todo-list/dist/)
 
 
 ## Built With
